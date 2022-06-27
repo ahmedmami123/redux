@@ -1,38 +1,375 @@
 .App {
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  background-color: rgb(127, 18, 160);
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+Nav bar
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*/
+.nav {
+  top: 0%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  background-color: rgb(92, 15, 128);
+  padding: 0px, 100px;
+  position: fixed;
+  line-height: 75px;
+  z-index: 9999999999999999999;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.nav h1 {
+  color: white;
+  font-weight: 600;
+}
+.nav h1 span {
+  color: rgba(255, 255, 255, 0.63);
+  font-weight: 600;
+}
+.nav ul li {
+  display: inline-block !important;
+  color: white;
+  font-size: 19px;
+  font-weight: 600;
+  margin-left: 80px;
+}
+.nav .profile {
+  width: 200px;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.nav .profile img {
+  width: 30px;
+  height: 30px;
+}
+.nav .profile .text {
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  height: 100%;
+}
+.nav .profile .text .h3 {
+  color: white;
+}
+/*
+    *
+    *
+    *
+    *
+    *
+    *****
+    *
+    *
+    *
+    *
+    *
+    *
+    *
+    *
+    *
+    Todoitem
+*/
+.item {
+  width: 300px;
+  height: 200px;
+  margin-left: 20px;
+  background-color: rgba(240, 255, 255, 0.281);
+  border-radius: 8px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  left: 0;
+}
+.item .edit{
+  position: absolute;
+  background-color:rgb(157, 80, 192) ;
+  width: 300px;
+  height: 200px;
+margin-top: -184px;
+margin-left: -35px;
+border-radius: 8px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+.item .edit input{
+  width: 250px;
+  height: 40px;
+  border-radius: 8px;
+  border: none;
+  margin-bottom: 20px;
+  background-color:rgb(92, 15, 128) ;
+  outline: none;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+
+.item h4 {
+  text-align: left;
+  color: white;
+  margin-left: 20px;
+}
+.item p {
+  text-align: left;
+  color: white;
+  font-weight: 400;
+  margin-left: 20px;
+}
+.item span {
+  color: white;
+  font-weight: 400;
+text-align: left;
+  cursor: pointer;
+  margin-left: 20px;
+}
+.item .btn {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.item .btn button {
+  width: 80px;
+  height: 30px;
+  border: none;
+  border-radius: 8px;
+  background-color: #fc7676;
+  color: white;
+}
+/*
+    *
+    *
+    *
+    *
+    *
+    *
+    *
+    *
+    *
+    *
+    *
+    *
+    *
+    TodoList
+    *
+    *
+    *
+    *
+    *
+    *
+    *
+    *
+    *
+    *
+    *
+    *
+    *
+    *
+    *
+    *
+    *
+    */
+.todolist {
+  margin-top: 50px;
+  width: 100%;
+
+  display: flex;
+}
+.todolist .List {
+  width: 75%;
+  border-right: 0.5px rgba(255, 255, 255, 0.363) solid;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.todolist .List .h2 {
+  color: white;
+  display: flex;
+  margin-left: 20px;
+}
+.todolist .List .h2 select {
+  background-color: rgb(92, 15, 128);
+  border: none;
+  outline: none;
+  width: 200px;
+  height: 50px;
+  color: rgb(168, 156, 156);
+  text-align: right;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+.todolist .List .h2 input {
+  background-color: rgb(92, 15, 128);
+  border: none;
+  outline: none;
+  width: 780px;
+  height: 48px;
+  color: white;
+
+  text-align: center;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.todolist .List .h2 .icon1 {
+  position: absolute;
+  margin-top: 12px;
+  margin-left: 13px;
+}
+.todolist .List .h2 .icon2 {
+  position: absolute;
+  margin-top: 12px;
+  margin-left: 230px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.todolist .List .listeItem {
+  width: 100%;
+  margin-left: 18px;
+  display: flex;
+  flex-wrap: wrap;
+
+  margin-top: 20px;
 }
+.todolist .add {
+  width: 25%;
+  
+}
+.addtodo {
+  width: 350px;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.addtodo .clander {
+  width: 100%;
+  height: 200px;
+}
+.addtodo .clander .t1 {
+  font-size: 20px;
+  font-weight: 600;
+  color: white;
+  margin-left: 20px;
+  text-align: left;
+}
+.addtodo .clander .t2 {
+  color: rgba(255, 255, 255, 0.596);
+  margin-left: 20px;
+  text-align: left;
+}
+.addtodo .clander .div1 {
+  width: 86%;
+
+border-bottom:0.5px rgba(255, 255, 255, 0.514) solid ;
+  margin-left: 20px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+}
+.addtodo .clander .div1 .div2 {
+
+  width: 100%;
+  height: 50px;
+  display: flex;
+  margin-bottom: 20px;
+  align-items: center;
+}
+.addtodo .clander .div1 .div2 .p1 {
+height: 40px;
+margin-top: 20px;
+
+width: 50%;
+ color: white;
+ border-right: 5px  #fc7676 solid ;
+}
+.addtodo .clander .div1 .div2 .p1 span {
+ margin-left: 5px;
+ color: rgba(255, 255, 255, 0.562);
+
+ }
+ .addtodo .clander .div1 .div2 .p2 {
+  height: 40px;
+  margin-top: 20px;
+  margin-left: 20px;
+  
+   color: white;
+  
+  }
+  .addtodo .clander .div1 .div2 p span {
+   margin-left: 2px;
+   color: rgba(255, 255, 255, 0.562);
+  
+   }
+   .addtodo .divAdd {
+width: 100%;
+margin-top: 20px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+  }
+  .addtodo .divAdd input {
+    width: 250px;
+    height: 40px;
+    border-radius: 8px;
+    border: none;
+    margin-bottom: 20px;
+    background-color:rgb(92, 15, 128) ;
+    outline: none;
+    color: white;
+      }
+      .addtodo .divAdd button {
+        width: 150px;
+        height: 40px;
+        border-radius: 8px;
+        border: none;
+        margin-bottom: 20px;
+        background-color: #fc7676 ;
+        outline: none;
+        color: white;
+          }
